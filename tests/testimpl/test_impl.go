@@ -37,6 +37,7 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 		apiGateway, err := apiGatewayClient.GetApi(context.TODO(), &apigatewayv2.GetApiInput{
 			ApiId: &apiGatewayId,
 		})
+
 		if err != nil {
 			t.Errorf("Failure during GetApi: %v", err)
 		}
@@ -151,7 +152,11 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 			t.Errorf("Failure during HTTP GET: %v", err)
 		}
 
-		defer resp.Body.Close()
+		defer func() {
+			if err := resp.Body.Close(); err != nil {
+				t.Errorf("Failed to close response body: %v", err)
+			}
+		}()
 		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Errorf("Failure reading Body: %v", err)
@@ -166,7 +171,11 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 			t.Errorf("Failure during HTTP GET: %v", err)
 		}
 
-		defer resp.Body.Close()
+		defer func() {
+			if err := resp.Body.Close(); err != nil {
+				t.Errorf("Failed to close response body: %v", err)
+			}
+		}()
 		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Errorf("Failure reading Body: %v", err)

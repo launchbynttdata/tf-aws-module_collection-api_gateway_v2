@@ -14,16 +14,20 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 module "lambda_function" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-lambda_function?ref=0.4.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/lambda_function/aws"
+  version = "~> 1.0"
 
   for_each = var.lambda_function
 
+  name = module.resource_names[each.key].minimal_random_suffix
+
+  create         = each.value.create
   create_package = each.value.create_package
   source_path    = each.value.source_path
-  create_alb     = each.value.create_alb
-  create_dns     = each.value.create_dns
+  runtime        = each.value.runtime
+  handler        = each.value.handler
 
-  naming_prefix = "${var.logical_product_service}_${each.key}"
+  create_lambda_function_url = false
 
   tags = var.tags
 }
@@ -39,8 +43,7 @@ resource "aws_lambda_permission" "allow_apigw_invoke" {
 }
 
 module "api_gateway_v2" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_collection/api_gateway_v2/aws"
-  version = "~> 1.0"
+  source = "../.."
 
   name = module.resource_names["api_gateway"].minimal_random_suffix
 
@@ -52,8 +55,8 @@ module "api_gateway_v2" {
 }
 
 module "resource_names" {
-  source  = "d2lqlh14iel5k2.cloudfront.net/module_library/resource_name/launch"
-  version = "~> 1.0"
+  source  = "terraform.registry.launch.nttdata.com/module_library/resource_name/launch"
+  version = "~> 2.0"
 
   for_each = var.resource_names_map
 

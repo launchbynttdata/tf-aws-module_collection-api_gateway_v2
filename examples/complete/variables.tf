@@ -26,6 +26,10 @@ variable "resource_names_map" {
       name       = "stage"
       max_length = 80
     }
+    example_function = {
+      name       = "fn"
+      max_length = 80
+    }
   }
 }
 
@@ -98,10 +102,11 @@ variable "class_env" {
 variable "lambda_function" {
   description = "Object mapping an alias to Lambda Function variables"
   type = map(object({
+    create         = optional(bool, true)
     create_package = optional(bool, true)
     source_path    = string
-    create_alb     = optional(bool, false)
-    create_dns     = optional(bool, false)
+    runtime        = optional(string, "python3.11")
+    handler        = optional(string, "index.lambda_handler")
   }))
 }
 

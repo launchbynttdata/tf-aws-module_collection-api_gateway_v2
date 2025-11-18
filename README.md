@@ -138,14 +138,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.14 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.6 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
@@ -155,10 +154,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_api_gateway"></a> [api\_gateway](#module\_api\_gateway) | d2lqlh14iel5k2.cloudfront.net/module_primitive/api_gateway_v2/aws | ~> 1.0 |
-| <a name="module_api_gateway_route"></a> [api\_gateway\_route](#module\_api\_gateway\_route) | d2lqlh14iel5k2.cloudfront.net/module_primitive/api_gateway_v2_route/aws | ~> 1.0 |
-| <a name="module_api_gateway_integration"></a> [api\_gateway\_integration](#module\_api\_gateway\_integration) | d2lqlh14iel5k2.cloudfront.net/module_primitive/api_gateway_v2_integration/aws | ~> 1.0 |
-| <a name="module_api_gateway_stage"></a> [api\_gateway\_stage](#module\_api\_gateway\_stage) | d2lqlh14iel5k2.cloudfront.net/module_collection/api_gateway_v2_stage/aws | ~> 1.0 |
+| <a name="module_api_gateway"></a> [api\_gateway](#module\_api\_gateway) | terraform.registry.launch.nttdata.com/module_primitive/api_gateway_v2/aws | ~> 1.0 |
+| <a name="module_api_gateway_route"></a> [api\_gateway\_route](#module\_api\_gateway\_route) | terraform.registry.launch.nttdata.com/module_primitive/api_gateway_v2_route/aws | ~> 1.0 |
+| <a name="module_api_gateway_integration"></a> [api\_gateway\_integration](#module\_api\_gateway\_integration) | terraform.registry.launch.nttdata.com/module_primitive/api_gateway_v2_integration/aws | ~> 1.0 |
+| <a name="module_api_gateway_stage"></a> [api\_gateway\_stage](#module\_api\_gateway\_stage) | terraform.registry.launch.nttdata.com/module_collection/api_gateway_v2_stage/aws | ~> 1.0 |
 
 ## Resources
 
@@ -169,9 +168,9 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | Name of the API Gateway | `string` | n/a | yes |
-| <a name="input_routes"></a> [routes](#input\_routes) | Map of routes to create in the API Gateway. | <pre>map(object({<br>    route_key = string<br>    target    = string<br>  }))</pre> | n/a | yes |
-| <a name="input_integrations"></a> [integrations](#input\_integrations) | Map of integrations to create in the API Gateway. | <pre>map(object({<br>    integration_type          = string<br>    connection_id             = optional(string, null)<br>    connection_type           = optional(string, null)<br>    content_handling_strategy = optional(string, null)<br>    credentials_arn           = optional(string, null)<br>    description               = optional(string, null)<br>    integration_method        = optional(string, null)<br>    integration_subtype       = optional(string, null)<br>    integration_uri           = optional(string, null)<br>    passthrough_behavior      = optional(string, "WHEN_NO_MATCH")<br>    payload_format_version    = optional(string, "2.0")<br>    request_parameters        = optional(map(string), {})<br>    request_templates         = optional(map(string), {})<br>    response_parameters = optional(list(object({<br>      status_code = number<br>      mappings    = map(string)<br>    })), [])<br>    template_selection_expression = optional(string, null)<br>    timeout_milliseconds          = optional(number, null)<br>    server_name_to_verify         = optional(string, null)<br>  }))</pre> | n/a | yes |
-| <a name="input_stages"></a> [stages](#input\_stages) | Map of stages to create in the API Gateway | <pre>map(object({<br>    name                     = optional(string, null)<br>    description              = optional(string, null)<br>    deployment_id            = optional(string, null)<br>    auto_deploy              = optional(bool, null)<br>    log_group_arn            = optional(string, null)<br>    log_group_retention_days = optional(number, 30)<br>    log_group_skip_destroy   = optional(bool, false)<br>    access_log_format        = optional(string, null)<br>  }))</pre> | n/a | yes |
+| <a name="input_routes"></a> [routes](#input\_routes) | Map of routes to create in the API Gateway. | <pre>map(object({<br/>    route_key = string<br/>    target    = string<br/>  }))</pre> | n/a | yes |
+| <a name="input_integrations"></a> [integrations](#input\_integrations) | Map of integrations to create in the API Gateway. | <pre>map(object({<br/>    integration_type          = string<br/>    connection_id             = optional(string, null)<br/>    connection_type           = optional(string, null)<br/>    content_handling_strategy = optional(string, null)<br/>    credentials_arn           = optional(string, null)<br/>    description               = optional(string, null)<br/>    integration_method        = optional(string, null)<br/>    integration_subtype       = optional(string, null)<br/>    integration_uri           = optional(string, null)<br/>    passthrough_behavior      = optional(string, "WHEN_NO_MATCH")<br/>    payload_format_version    = optional(string, "2.0")<br/>    request_parameters        = optional(map(string), {})<br/>    request_templates         = optional(map(string), {})<br/>    response_parameters = optional(list(object({<br/>      status_code = number<br/>      mappings    = map(string)<br/>    })), [])<br/>    template_selection_expression = optional(string, null)<br/>    timeout_milliseconds          = optional(number, null)<br/>    server_name_to_verify         = optional(string, null)<br/>  }))</pre> | n/a | yes |
+| <a name="input_stages"></a> [stages](#input\_stages) | Map of stages to create in the API Gateway | <pre>map(object({<br/>    name                     = optional(string, null)<br/>    description              = optional(string, null)<br/>    deployment_id            = optional(string, null)<br/>    auto_deploy              = optional(bool, null)<br/>    log_group_arn            = optional(string, null)<br/>    log_group_retention_days = optional(number, 30)<br/>    log_group_skip_destroy   = optional(bool, false)<br/>    access_log_format        = optional(string, null)<br/>  }))</pre> | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to assign to the API. | `map(string)` | `null` | no |
 
 ## Outputs
@@ -183,4 +182,4 @@ No resources.
 | <a name="output_api_gateway_routes"></a> [api\_gateway\_routes](#output\_api\_gateway\_routes) | n/a |
 | <a name="output_api_gateway_integrations"></a> [api\_gateway\_integrations](#output\_api\_gateway\_integrations) | n/a |
 | <a name="output_api_gateway_stages"></a> [api\_gateway\_stages](#output\_api\_gateway\_stages) | n/a |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
