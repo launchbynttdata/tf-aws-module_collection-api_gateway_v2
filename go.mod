@@ -3,7 +3,7 @@ module github.com/launchbynttdata/tf-aws-module_collection-api_gateway_v2
 go 1.24
 
 require (
-	github.com/aws/aws-sdk-go v1.44.122
+	github.com/aws/aws-sdk-go v1.55.8
 	github.com/aws/aws-sdk-go-v2 v1.41.5
 	github.com/aws/aws-sdk-go-v2/config v1.26.6
 	github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.32.13
