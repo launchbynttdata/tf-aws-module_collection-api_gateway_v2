@@ -9,7 +9,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.32.13
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.68.0
 	github.com/gruntwork-io/terratest v0.43.12
-	github.com/launchbynttdata/lcaf-component-terratest v1.0.3
+	github.com/launchbynttdata/lcaf-component-terratest v1.0.4
 	github.com/stretchr/testify v1.8.1
 )
 
