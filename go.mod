@@ -10,7 +10,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.68.0
 	github.com/gruntwork-io/terratest v0.43.12
 	github.com/launchbynttdata/lcaf-component-terratest v1.0.3
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.11.1
 )
 
 require (
