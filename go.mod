@@ -6,7 +6,7 @@ require (
 	github.com/aws/aws-sdk-go v1.44.122
 	github.com/aws/aws-sdk-go-v2 v1.41.5
 	github.com/aws/aws-sdk-go-v2/config v1.26.6
-	github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.32.13
+	github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.34.1
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.68.0
 	github.com/gruntwork-io/terratest v0.43.12
 	github.com/launchbynttdata/lcaf-component-terratest v1.0.3

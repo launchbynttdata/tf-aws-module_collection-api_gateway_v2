@@ -218,8 +218,8 @@ github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.21 h1:PEgGVtPoB6NTpPrBgq
 github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.7.21/go.mod h1:p+hz+PRAYlY3zcpJhPwXlLC4C+kqn70WIHwnzAfs6ps=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.7.3 h1:n3GDfwqF2tzEkXlv5cuy4iy7LpKDtqDMcNLfZDu9rls=
 github.com/aws/aws-sdk-go-v2/internal/ini v1.7.3/go.mod h1:6fQQgfuGmw8Al/3M2IgIllycxV7ZW7WCdVSqfBeUiCY=
-github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.32.13 h1:X0cUJQKKQ69LtstWj3jjXRBaaCARs5FnS+xb2EedJEQ=
-github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.32.13/go.mod h1:vr6hE/YGoQQa8PPwsB1uKt9wHjNZZcbXN+ww6lBXVhY=
+github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.34.1 h1:KdeMmKNbHOcFsiFe8BhLYE2A8crvEWnetrs8GkF2od8=
+github.com/aws/aws-sdk-go-v2/service/apigatewayv2 v1.34.1/go.mod h1:QdVi7bF8U8HE8FWQ77pa4wcAMFnxI/UPx4mmQ4azRQs=
 github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.68.0 h1:+/lmB/+i2oqkzbmlQxsW0kr/+wmJgmyiEF9VDJicX34=
 github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.68.0/go.mod h1:PobeppEnIjw4pcgjFryNDZCTH7AiqZw0yb5r98Gvf9c=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.10.4 h1:/b31bi3YVNlkzkBrm9LfpaKoaYZUxIAj4sHfOTmLfqw=
